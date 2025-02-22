@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
+
+:root {
+  --bg-color: #191d2b;
+  --text-color: #fff;
+  --main-color: #27ae60;
+}
+
+* {
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Henny Penny", serif;
+}
+
+body {
+  height: 100vh;
+  background: url("Tom\ And\ Jerry.gif") center/cover no-repeat fixed;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+.game-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.game-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.game-modal .content {
+  background: var(--text-color);
+  width: 420px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.game-modal img {
+  width: 150px;
+}
+
+.game-modal p b {
+  color: var(--main-color);
+}
+
+.game-box {
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.word-display .letter {
+  width: 28px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 3px solid var(--main-color);
+}
+
+.word-display .letter.guessed {
+  border-color: transparent;
+  margin: -30px 0 35px;
+}
+
+.keyboard button {
+  background: transparent;
+  color: var(--bg-color);
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.keyboard button[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.guesses-text b {
+  color: var(--main-color);
+}
