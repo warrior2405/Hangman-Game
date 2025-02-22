@@ -158,10 +158,11 @@ const getRandomWord = () => {
       "btn",
       "btn-success",
       "p-3",
-      "f-2",
-      "fw-bolder",
+      "fs-4",
+      "fw-bold",
       "rounded",
-      "text-uppercase"
+      "text-uppercase",
+      "border-2"
     );
     button.classList.remove("disabled");
   });
@@ -181,9 +182,7 @@ const revealLetters = (letter) => {
 const endGame = (isVictory) => {
   setTimeout(() => {
     gameModal.classList.add("show");
-    const modalImageSrc = isVictory
-      ? "AuraAdd.gif"
-      : "AuraSub.gif";
+    const modalImageSrc = isVictory ? "AuraAdd.gif" : "AuraSub.gif";
     const modalMessage = isVictory
       ? "Congratulations! You Won!"
       : "Game Over! Better luck next time.";
